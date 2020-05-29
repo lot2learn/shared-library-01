@@ -8,6 +8,6 @@ def call(String deploymentType, String hostFile, String mainPlaybook) {
         proc.consumeProcessOutput(sout, serr)
         proc.waitFor()
         println "Std Out: ${proc.in.text}"
-        return sout.tokenize()
+        println sout.tokenize()
     }
 }
