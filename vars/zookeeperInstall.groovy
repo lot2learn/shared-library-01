@@ -3,9 +3,9 @@
 def call(String deploymentType, String hostFile, String mainPlaybook) {
     if (deploymentType == "all") {
         def command = 'ansible-playbook -i ' + hostFile + ' ' + deploymentType + ' ' + mainPlaybook
+        println command
         def proc = command.execute()
         proc.waitFor()
-
         println "Std Out: ${proc.in.text}"
     }
 }
