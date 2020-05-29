@@ -5,7 +5,9 @@ def call(String deploymentType, String hostFile, String mainPlaybook) {
         def command = 'ansible-playbook -i ' + hostFile + ' ' + deploymentType + ' ' + mainPlaybook
         println command
         def proc = command.execute()
+        proc.consumeProcessOutput(sout, serr)
         proc.waitFor()
         println "Std Out: ${proc.in.text}"
+        return sout.tokenize()
     }
 }
