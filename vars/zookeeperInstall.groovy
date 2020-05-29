@@ -4,7 +4,7 @@ def call(String deploymentType, String hostFile, String mainPlaybook) {
     if (deploymentType == "all") {
         def sout = new StringBuffer(), serr = new StringBuffer()
         // def command = 'pwd && ls'
-        def command = 'ansible-playbook -i ' + hostFile + ' ' + mainPlaybook + ' ' + '&& pwd && ls'
+        def command = 'pwd && ls &&' + ' ' + 'ansible-playbook -i ' + hostFile + ' ' + mainPlaybook
         println command
         def proc = command.execute()
         proc.consumeProcessOutput(sout, serr)
