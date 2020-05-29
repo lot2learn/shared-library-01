@@ -8,5 +8,6 @@ def call(int occurence) {
     if (count > occurence) {
         currentBuild.result = 'UNSTABLE'
     }
-    println "##### WARNING(s) = " + toString(count) + " #####"
+    def warning = "##### WARNING(s) = " + toString(count) + " #####"
+    println warning
 }
