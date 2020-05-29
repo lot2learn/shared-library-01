@@ -2,6 +2,7 @@
 
 def call(String deploymentType, String hostFile, String mainPlaybook) {
     if (deploymentType == "all") {
+        def sout = new StringBuffer(), serr = new StringBuffer()
         def command = 'ansible-playbook -i ' + hostFile + ' ' + deploymentType + ' ' + mainPlaybook
         println command
         def proc = command.execute()
