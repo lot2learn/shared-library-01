@@ -15,7 +15,7 @@ def ansibleDeploy(String deploymentType, String hostFile, String mainPlaybook) {
     }
 }
 
-def getCurrDir(String deploymentType, String hostFile, String mainPlaybook) {
+def getCurrDir() {
     def cmd = "pwd"
     def proc = cmd.execute()
     proc.consumeProcessOutput(sout, serr)
