@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String hostFile, String mainPlaybook) {
+def call(String deploymentType, String hostFile, String mainPlaybook) {
     if (deploymentType == "all") {
         def sout = new StringBuffer(), serr = new StringBuffer()
         def command = 'ansible-playbook -i ' + hostFile + ' ' + mainPlaybook
