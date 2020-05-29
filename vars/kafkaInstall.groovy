@@ -16,12 +16,13 @@ def ansibleDeploy(String deploymentType, String hostFile, String mainPlaybook) {
 }
 
 def getCurrDir() {
-    def sout = new StringBuffer(), serr = new StringBuffer()
-    def cmd = "pwd"
-    def proc = cmd.execute()
-    proc.consumeProcessOutput(sout, serr)
-    proc.waitFor()
-    println "Std Out: ${proc.in.text}"
-    println serr.tokenize()
-    return sout.tokenize()
+    // def sout = new StringBuffer(), serr = new StringBuffer()
+    // def cmd = "pwd"
+    // def proc = cmd.execute()
+    // proc.consumeProcessOutput(sout, serr)
+    // proc.waitFor()
+    // println "Std Out: ${proc.in.text}"
+    // println serr.tokenize()
+    // return sout.tokenize()
+    sh 'pwd'
 }
