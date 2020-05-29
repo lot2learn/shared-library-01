@@ -8,5 +8,5 @@ def call(int occurence) {
     if (count > occurence) {
         currentBuild.result = 'UNSTABLE'
     }
-    println "##### No WARNING(s) or Less than 4 WARNING(s) #####"
+    println "##### WARNING(s) = " + toString(count) + " #####"
 }
